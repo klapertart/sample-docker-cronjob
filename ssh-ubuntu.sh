@@ -3,7 +3,7 @@
 set timeout -1
 set date [timestamp -format %Y%m%d%H%M]
 
-log_file "/home/klapertart/expect/ssh-ubuntu-$date.log"
+log_file "/var/log/expect/ssh-ubuntu-$date.log"
 
 spawn ssh klapertart@192.168.8.87
 
