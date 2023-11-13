@@ -5,7 +5,7 @@ set date [timestamp -format %Y%m%d%H%M]
 
 log_file "/var/log/expect/ssh-centos-$date.log"
 
-spawn ssh root@192.168.8.63
+spawn ssh root@192.168.56.101
 
 expect {
     timeout {

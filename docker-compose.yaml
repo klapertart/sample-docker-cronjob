@@ -6,7 +6,7 @@ services:
     image: hello:latest
     network_mode: host
     volumes:
-      - /home/docker/sample-cron/data:/var/log
+      - /home/docker/sample-cron/data:/var/log/expect
       - /etc/timezone:/etc/timezone
       - /etc/localtime:/etc/localtime
 
