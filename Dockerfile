@@ -3,19 +3,18 @@ FROM ubuntu:20.04
 # Install cron
 RUN apt-get update && apt-get -y install cron
 
-RUN apt-get -y install net-tools
+RUN apt-get -y install net-tools iputils-ping expect openssh-server nano
 
-RUN apt-get -y install iputils-ping
-
-RUN apt-get -y install expect
-
-RUN apt-get -y install openssh-server
+# Set working directory
+WORKDIR /app
 
 # Copy bash file to working directory
-COPY ssh-centos.sh /app/
+COPY ssh-centos.sh /app
+COPY ssh-ubuntu.sh /app
 
 # Change file mode to executable file
 RUN chmod +x /app/ssh-centos.sh
+RUN chmod +x /app/ssh-ubuntu.sh
 
 # Copy the cron file to the container
 COPY cronfile /etc/cron.d/cronfile
