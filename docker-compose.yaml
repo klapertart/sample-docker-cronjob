@@ -1,0 +1,13 @@
+version: '3.7'
+
+services:
+  helloserver:
+    container_name: helloservice
+    image: hello:latest
+    network_mode: host
+    volumes:
+      - /home/docker/sample-cron/data:/var/log
+      - /home/docker/sample-cron/app:/app
+      - /etc/timezone:/etc/timezone
+      - /etc/localtime:/etc/localtime
+
